@@ -5,9 +5,6 @@ It is created to demo Serverless Microservices using Azure Serverless components
 
 ![Demo architecture](demo.png)
 
-## Infrastructure as Code
-
-
 ## Flow of messages
 1. The rest api places an order.
 2. The sales functions app handles the `PlaceOrder` message.
