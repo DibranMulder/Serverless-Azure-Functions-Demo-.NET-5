@@ -17,3 +17,27 @@ It is created to demo Serverless Microservices using Azure Serverless components
 7. The shippings functions app sends an `ShipOrder` message.
 8. The logic app handles an `ShipOrder` message.
     - It sends an e-mail to me.
+
+
+## Deployment
+
+### Scaffold a local function app
+```bash
+func new
+```
+
+* dotnet (isolated proces)
+* Choose trigger
+* Enter <function name>
+
+### Create Azure Resources
+```bash
+az group create --name AzureFunctionsQuickstart-rg --location westeurope
+az storage account create --name <STORAGE_NAME> --location westeurope --resource-group AzureFunctionsQuickstart-rg --sku Standard_LRS
+az functionapp create --resource-group AzureFunctionsQuickstart-rg --consumption-plan-location westeurope --runtime dotnet-isolated --functions-version 3 --name <APP_NAME> --storage-account <STORAGE_NAME>
+```
+
+### Deploy Azure Function App
+````bash
+func azure functionapp publish <AppServiceName> -i
+```
