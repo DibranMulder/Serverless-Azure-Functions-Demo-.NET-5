@@ -28,7 +28,7 @@ func new
 
 * dotnet (isolated proces)
 * Choose trigger
-* Enter <function name>
+* Enter function name
 
 ### Create Azure Resources
 ```bash
@@ -38,6 +38,6 @@ az functionapp create --resource-group AzureFunctionsQuickstart-rg --consumption
 ```
 
 ### Deploy Azure Function App
-````bash
+```bash
 func azure functionapp publish <AppServiceName> -i
 ```
